@@ -39,6 +39,7 @@
 
         let url='';
         function setUrl(){
+            console.log(`number=${magicnumber(datetime_string)}&constellation=${getStarSit(datetime_string)}`);
             url1=`https://buildschoolapi.azurewebsites.net/api/number/GetNumerology?number=${magicnumber(datetime_string)}&constellation=${getStarSit(datetime_string)}`;
         }
         function doAjax() {         
@@ -90,7 +91,7 @@
         //判斷星座
         function getStarSit(input) {
             let array = input.split('/');
-            let dateObj = new Date(2016, 9, 24);
+            let dateObj = new Date(array[2],array[0],array[1]);
             let month = dateObj.getMonth();
             //太扯了dateObj.getDay()是星期幾
             let date = dateObj.getDay() / 100;
