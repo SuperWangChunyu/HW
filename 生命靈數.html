@@ -37,17 +37,9 @@
         let btn = document.getElementById('btn1');
         let datetime_string;
 
-        function seturl() {
-            // console.log("datetime_string: ", datetime_string, magicnumber(datetime_string), getStarSit(datetime_string));
-            // let url = `http://buildschoolapi.azurewebsites.net/api/number/GetNumerology?number=${magicnumber(datetime_string)}&constellation=${getStarSit(datetime_string).toLowerCase()}`;
-            // debugger;
-            // $.ajax({
-            //    
-            // });
-        }
         let url='';
         function setUrl(){
-            url1=`http://buildschoolapi.azurewebsites.net/api/number/GetNumerology?number=${magicnumber(datetime_string)}&constellation=${getStarSit(datetime_string)}`;
+            url1=`https://buildschoolapi.azurewebsites.net/api/number/GetNumerology?number=${magicnumber(datetime_string)}&constellation=${getStarSit(datetime_string)}`;
         }
         function doAjax() {         
             $.ajax({
@@ -60,14 +52,14 @@
                 ,error:{}    
             });
         }
-        function doxhr(){
-            let xhr=new XMLHttpRequest();
-            xhr.open('get',url1);
-            xhr.onload=function(){
-                alert(this.response);
-            }
-            xhr.send();
-        }
+        // function doxhr(){
+        //     let xhr=new XMLHttpRequest();
+        //     xhr.open('get',url1);
+        //     xhr.onload=function(){
+        //         alert(this.response);
+        //     }
+        //     xhr.send();
+        // }
 
         btn.addEventListener('click', function () {
             datetime_string = document.getElementById('datepicker').value;
